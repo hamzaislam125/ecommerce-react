@@ -7,8 +7,8 @@ export default function Sidebar({ filteredCategory, handleProduct }) {
     <aside className="sidebar">
       {filteredCategory.map((category) => (
         <Button
-          onClick={() => handleProduct(category.id)}
-          key={category.id}
+          onClick={() => handleProduct(category.categoryID)}
+          key={category.categoryID}
           className={"sidebar__button"}
         >
           {category.name}

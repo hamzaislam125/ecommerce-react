@@ -46,9 +46,7 @@ const dispatch = useContext(GlobalDispatchContext);
           className={"product-image"}
         />
       </figure>
-      <p className="card-container__text" title={text}>
-        {text}
-      </p>
+      <p className="card-container__text" dangerouslySetInnerHTML={{__html: text}} title={text}></p>
       <section className="card-container__section">
         {browserWidth ? (
           <>
