@@ -6,14 +6,23 @@ import WrapperText from '../../molecules/WrapperText/WrapperText';
 export default function Signin() {
     const inputLabel = [
         {
+
             type: "email",
+
             placeholder: "Email",
-            inputId: "field-1"
+
+            inputId: "email"
+
         },
+
         {
+
             type: "password",
+
             placeholder: "Password",
-            inputId: "field-2"
+
+            inputId: "password"
+
         }
     ];
 

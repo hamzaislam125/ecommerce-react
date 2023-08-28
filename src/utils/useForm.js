@@ -27,6 +27,22 @@ export default function useForm(validate) {
     e.preventDefault();
     setErrors(validate(values));
     setIsSubmit(true);
+    if (!errors) {
+      let endpoint = "register";
+      if (e.target.action.endsWith("signin")) {
+        endpoint = "signin";
+      }
+      fetch('http://localhost:5000/' + endpoint, {
+        method: 'post',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(values)
+      }).then( res => res.json())
+        .then( data => {
+          localStorage.setItem('token', data.token);
+          endpoint = e.target.action.endsWith("register") ? "/signin" : "/";
+          navigate(endpoint);
+        });
+    }
   };
 
   useEffect(() => {

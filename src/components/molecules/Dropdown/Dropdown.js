@@ -12,7 +12,7 @@ export default function Dropdown({ items, handleProduct }) {
     if (location.pathname.includes("/products/")) {
       const id = location.pathname.split("/")[2];
       items.find((item) => {
-        if (item.id === id) {
+        if (item.categoryID === id) {
           setName(item.name);
         }
       });
@@ -34,7 +34,7 @@ export default function Dropdown({ items, handleProduct }) {
           <li
             onClick={() => {
               handleDropdown();
-              handleProduct(item.id);
+              handleProduct(item.categoryID);
               setName(item.name);
             }}
             key={index}
